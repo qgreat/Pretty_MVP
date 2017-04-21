@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_gallery"
+        android:background="?attr/colorPrimary"
+
+
+        android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
+    <!--预定义样式，会随着主题变化，所以每个主题下都有对应的值-->
+
+</LinearLayout>
