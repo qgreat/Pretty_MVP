@@ -11,6 +11,7 @@ import android.view.View;
 import com.codingqi.pretty.R;
 import com.codingqi.pretty.di.component.DaggerGirlComponent;
 import com.codingqi.pretty.di.module.GirlModule;
+import com.codingqi.pretty.mvp.contract.GirlsContract;
 import com.codingqi.pretty.mvp.contract.UserContract;
 import com.codingqi.pretty.mvp.presenter.GirlPresenter;
 import com.jess.arms.base.DefaultAdapter;
@@ -27,7 +28,7 @@ import rx.functions.Action1;
 import timber.log.Timber;
 
 
-public class GirlActivity extends WEActivity<GirlPresenter> implements UserContract.View, SwipeRefreshLayout.OnRefreshListener {
+public class GirlActivity extends WEActivity<GirlPresenter> implements GirlsContract.View, SwipeRefreshLayout.OnRefreshListener {
 
     @Nullable
     @BindView(R.id.recyclerView)

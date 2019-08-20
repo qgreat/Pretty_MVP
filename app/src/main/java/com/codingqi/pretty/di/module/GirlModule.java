@@ -1,5 +1,6 @@
 package com.codingqi.pretty.di.module;
 
+import com.codingqi.pretty.mvp.contract.GirlsContract;
 import com.codingqi.pretty.mvp.contract.UserContract;
 import com.codingqi.pretty.mvp.model.GirlsModel;
 import com.jess.arms.di.scope.ActivityScope;
@@ -13,25 +14,25 @@ import dagger.Provides;
  */
 @Module
 public class GirlModule {
-    private UserContract.View view;
+    private GirlsContract.View view;
 
     /**
      * 构建UserModule时,将View的实现类传进来,这样就可以提供View的实现类给presenter
      * @param view
      */
-    public GirlModule(UserContract.View view) {
+    public GirlModule(GirlsContract.View view) {
         this.view = view;
     }
 
     @ActivityScope
     @Provides
-    UserContract.View provideUserView(){
+    GirlsContract.View provideUserView(){
         return this.view;
     }
 
     @ActivityScope
     @Provides
-    UserContract.Model provideUserModel(GirlsModel model){
+    GirlsContract.Model provideUserModel(GirlsModel model){
         return model;
     }
 }

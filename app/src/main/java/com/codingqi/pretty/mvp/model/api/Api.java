@@ -9,5 +9,6 @@ public interface Api {
     String RequestSuccess = "0";
 
     String GIRL_APP_DOMAIN = "https://gank.io";
+    String GIRL_APP_DOMAIN_PIC = "https://gank.io";
     boolean GIRL_RequestSuccess = false;
 }

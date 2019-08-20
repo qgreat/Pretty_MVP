@@ -1,5 +1,6 @@
 package com.codingqi.pretty.mvp.model;
 
+import com.codingqi.pretty.mvp.contract.GirlsContract;
 import com.codingqi.pretty.mvp.contract.UserContract;
 import com.codingqi.pretty.mvp.model.api.cache.CacheManager;
 import com.codingqi.pretty.mvp.model.api.service.ServiceManager;
@@ -23,7 +24,7 @@ import rx.functions.Func1;
  * Contact with jess.yan.effort@gmail.com
  */
 @ActivityScope
-public class GirlsModel extends BaseModel<ServiceManager, CacheManager> implements UserContract.Model {
+public class GirlsModel extends BaseModel<ServiceManager, CacheManager> implements GirlsContract.Model {
     public static final int USERS_PER_PAGE = 10;
 
     @Inject
@@ -32,7 +33,7 @@ public class GirlsModel extends BaseModel<ServiceManager, CacheManager> implemen
     }
 
     @Override
-    public Observable<GirlJson<List<GirlsBean>>> getUsers(int lastIdQueried, boolean update) {
+    public Observable<GirlJson<List<GirlsBean>>> getGirls(int lastIdQueried, boolean update) {
         Observable<GirlJson<List<GirlsBean>>> users = mServiceManager.getGirlService()
                 .getGirls("福利",USERS_PER_PAGE,lastIdQueried);
 //                .getUsers(lastIdQueried, USERS_PER_PAGE);

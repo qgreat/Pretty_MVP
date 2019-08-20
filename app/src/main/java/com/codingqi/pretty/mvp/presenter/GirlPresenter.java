@@ -3,6 +3,7 @@ package com.codingqi.pretty.mvp.presenter;
 import android.app.Application;
 import android.widget.Toast;
 
+import com.codingqi.pretty.mvp.contract.GirlsContract;
 import com.codingqi.pretty.mvp.contract.UserContract;
 import com.codingqi.pretty.mvp.model.entity.GirlJson;
 import com.codingqi.pretty.mvp.model.entity.GirlsBean;
@@ -35,7 +36,7 @@ import rx.schedulers.Schedulers;
  */
 
 @ActivityScope
-public class GirlPresenter extends BasePresenter<UserContract.Model, UserContract.View> {
+public class GirlPresenter extends BasePresenter<GirlsContract.Model, GirlsContract.View> {
     private RxErrorHandler mErrorHandler;
     private AppManager mAppManager;
     private Application mApplication;
@@ -45,7 +46,7 @@ public class GirlPresenter extends BasePresenter<UserContract.Model, UserContrac
     private boolean isFirst = true;
 
     @Inject
-    public GirlPresenter(UserContract.Model model, UserContract.View rootView, RxErrorHandler handler
+    public GirlPresenter(GirlsContract.Model model, GirlsContract.View rootView, RxErrorHandler handler
             , AppManager appManager, Application application) {
         super(model, rootView);
         this.mApplication = application;
@@ -69,14 +70,14 @@ public class GirlPresenter extends BasePresenter<UserContract.Model, UserContrac
         //关于RxCache缓存库的使用请参考 http://www.jianshu.com/p/b58ef6b0624b
 
         boolean isEvictCache = pullToRefresh;//是否驱逐缓存,为ture即不使用缓存,每次上拉刷新即需要最新数据,则不使用缓存
-
+         isEvictCache=true;
         if (pullToRefresh && isFirst){//默认在第一次上拉刷新时使用缓存
             isFirst = false;
-            isEvictCache = false;
+//            isEvictCache = false;
         }
         isEvictCache = true;
 
-        mModel.getUsers(lastUserId, isEvictCache)
+        mModel.getGirls(lastUserId, isEvictCache)
                 .subscribeOn(Schedulers.io())
                 .retryWhen(new RetryWithDelay(3, 2))//遇到错误时重试,第一个参数为重试几次,第二个参数为重试的间隔
                 .doOnSubscribe(new Action0() {

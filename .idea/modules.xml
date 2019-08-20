@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MVP_Pretty.iml" filepath="$PROJECT_DIR$/MVP_Pretty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Pretty_MVP.iml" filepath="$PROJECT_DIR$/.idea/Pretty_MVP.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/arms/arms.iml" filepath="$PROJECT_DIR$/arms/arms.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxerrorhandler/rxerrorhandler.iml" filepath="$PROJECT_DIR$/rxerrorhandler/rxerrorhandler.iml" />

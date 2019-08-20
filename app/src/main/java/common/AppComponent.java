@@ -26,8 +26,6 @@ import okhttp3.OkHttpClient;
 @Singleton
 @Component(modules = {AppModule.class, ClientModule.class, ServiceModule.class, ImageModule.class,
         CacheModule.class, GlobeConfigModule.class})
-
-
 public interface AppComponent {
     Application Application();
 
